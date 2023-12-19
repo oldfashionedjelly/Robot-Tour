@@ -11,40 +11,59 @@ void setup() {
 
 void loop() {
   motor1.setSpeed(speed(100));
-  motor1.run(FORWARD);
   motor2.setSpeed(speed(100));
-  motor2.run(BACKWARD);
   motor3.setSpeed(speed(100));
-  motor3.run(BACKWARD);
   motor4.setSpeed(speed(100));
+}
+
+void init () {
+  
+}
+
+void leftBlock() {
+
+}
+
+void rightBlock() {
+
+}
+
+void forwardBlock() {
+  motor1.run(FORWARD);
+  motor2.run(FORWARD);
+  motor3.run(FORWARD);
   motor4.run(FORWARD);
 }
 
-void init (int speed) {
-  //go out half a block
-  //turn 180
+void backBlock() {
+  motor1.run(BACKWARD);
+  motor2.run(BACKWARD);
+  motor3.run(BACKWARD);
+  motor4.run(BACKWARD);
 }
 
-void leftBlock(int speed) {
-
-}
-
-void rightBlock(int speed) {
-
-}
-
-void forwardBlock(int speed) {
+void halfLeft() {
 
 }
 
-void turnLeft() {
-
+void halfRight() {
+  
 }
 
-void turnRight() {
-
+void halfForward() {
+  motor1.run(FORWARD);
+  motor2.run(FORWARD);
+  motor3.run(FORWARD);
+  motor4.run(FORWARD);
 }
 
-int speed(int percent) {
+void halfBack() {
+  motor1.run(BACKWARD);
+  motor2.run(BACKWARD);
+  motor3.run(BACKWARD);
+  motor4.run(BACKWARD);
+}
+
+int speed (int percent) {
   return map(percent, 0, 100, 0, 255);
 }
