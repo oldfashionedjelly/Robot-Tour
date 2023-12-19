@@ -20,6 +20,31 @@ void loop() {
   motor4.run(FORWARD);
 }
 
+void init (int speed) {
+  //go out half a block
+  //turn 180
+}
+
+void leftBlock(int speed) {
+
+}
+
+void rightBlock(int speed) {
+
+}
+
+void forwardBlock(int speed) {
+
+}
+
+void turnLeft() {
+
+}
+
+void turnRight() {
+
+}
+
 int speed(int percent) {
   return map(percent, 0, 100, 0, 255);
 }
