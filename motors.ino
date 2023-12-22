@@ -1,26 +1,35 @@
 #include <AFMotor.h>
-#include <iostream>
-using namespace std;
 
-AF_DCMotor motor1(1);
-AF_DCMotor motor2(2);
-AF_DCMotor motor3(3);
-AF_DCMotor motor4(4);
+AF_DCMotor motor1(1); //blue FR
+AF_DCMotor motor2(2); //white FL
+AF_DCMotor motor3(3); //black BL
+AF_DCMotor motor4(4); //red BR
+
+const int buttonPin = 0;
+int buttonState = 0;
 
 void setup() {
   Serial.begin(9600);
+  pinMode(buttonPin, INPUT);
 }
 
 void loop() {
-  init();
-}
-
-void init() {
+  buttonState = digitalRead(buttonPin);
   motor1.setSpeed(speed(100));
   motor2.setSpeed(speed(100));
   motor3.setSpeed(speed(100));
   motor4.setSpeed(speed(100));
-  halfForward();
+  if (buttonState == HIGH) {
+    
+  }
+  motor1.run(FORWARD);
+  motor2.run(FORWARD);
+  motor3.run(FORWARD);
+  motor4.run(FORWARD);
+}
+
+int speed (int percent) {
+  return map(percent, 0, 100, 0, 255);
 }
 
 void leftBlock() {
@@ -77,8 +86,4 @@ void halfBack() {
   motor2.run(BACKWARD);
   motor3.run(BACKWARD);
   motor4.run(BACKWARD);
-}
-
-int speed (int percent) {
-  return map(percent, 0, 100, 0, 255);
 }
