@@ -25,8 +25,7 @@ void loop() {
   motor4.setSpeed(speed(100));
   motor4.run(FORWARD);
   if (currentMillis - startMillis >= period) {
-    Serial.println("hello");
-    motor1.run(RELEASE);
+    motor1.run(RELEASE); //setSpeed(0)
     motor2.run(RELEASE);
     motor3.run(RELEASE);
     motor4.run(RELEASE);

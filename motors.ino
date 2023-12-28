@@ -6,26 +6,25 @@ AF_DCMotor motor3(3); //black BL
 AF_DCMotor motor4(4); //red BR
 
 const int buttonPin = 0;
-int buttonState = 0;
+int buttonState = 0; //low
 
 void setup() {
   Serial.begin(9600);
-  pinMode(buttonPin, INPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
 }
 
 void loop() {
-  buttonState = digitalRead(buttonPin);
+  buttonState = digitalRead(buttonPin); 
+  //low = pressed (0)
+  //high = not pressed (1)
   motor1.setSpeed(speed(100));
   motor2.setSpeed(speed(100));
   motor3.setSpeed(speed(100));
   motor4.setSpeed(speed(100));
-  if (buttonState == HIGH) {
-    
+  if (buttonState == LOW) {
+    //start
+    //go forward, turn, etc
   }
-  motor1.run(FORWARD);
-  motor2.run(FORWARD);
-  motor3.run(FORWARD);
-  motor4.run(FORWARD);
 }
 
 int speed (int percent) {
