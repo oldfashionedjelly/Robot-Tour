@@ -25,6 +25,11 @@ void loop() {
     motor2.setSpeed(255);
     motor3.setSpeed(255);
     motor4.setSpeed(255);
+    int period = 1500;
+    forward(period);
+    right(period);
+    back(period);
+    left(period);
   }
 }
 
@@ -32,58 +37,50 @@ void loop() {
 //   return map(percent, 0, 100, 0, 255);
 // }
 
-void rightBlock() {
+void right(int period) {
   motor1.run(BACKWARD);
   motor2.run(FORWARD);
   motor3.run(BACKWARD);
   motor4.run(FORWARD);
+  delay(period);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
 }
 
-void lefttBlock() {
+void left(int period) {
   motor1.run(FORWARD);
   motor2.run(BACKWARD);
   motor3.run(FORWARD);
   motor4.run(BACKWARD); 
+  delay(period);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
 }
 
-void forwardBlock() {
+void forward(int period) {
   motor1.run(FORWARD);
   motor2.run(FORWARD);
   motor3.run(FORWARD);
   motor4.run(FORWARD);
+  delay(period);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
 }
 
-void backBlock() {
+void back(int period) {
   motor1.run(BACKWARD);
   motor2.run(BACKWARD);
   motor3.run(BACKWARD);
   motor4.run(BACKWARD);
-}
-
-void halfLeft() {
-  motor1.run(BACKWARD);
-  motor2.run(FORWARD);
-  motor3.run(BACKWARD);
-  motor4.run(FORWARD);
-}
-
-void halfRight() {
-  motor1.run(FORWARD);
-  motor2.run(BACKWARD);
-  motor3.run(FORWARD);
-  motor4.run(BACKWARD);  
-}
-
-void halfForward() {
-  motor1.run(FORWARD);
-  motor2.run(FORWARD);
-  motor3.run(FORWARD);
-  motor4.run(FORWARD);
-}
-
-void halfBack() {
-  motor1.run(BACKWARD);
-  motor2.run(BACKWARD);
-  motor3.run(BACKWARD);
-  motor4.run(BACKWARD);
+  delay(period);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
 }

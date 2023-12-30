@@ -24,14 +24,14 @@ void loop() {
   }
 }
 
-void leftBlock() {
+void rightBlock() {
   motor1.run(BACKWARD);
   motor2.run(FORWARD);
   motor3.run(BACKWARD);
   motor4.run(FORWARD);
 }
 
-void rightBlock() {
+void leftBlock() {
   motor1.run(FORWARD);
   motor2.run(BACKWARD);
   motor3.run(FORWARD);
@@ -43,6 +43,11 @@ void forwardBlock() {
   motor2.run(FORWARD);
   motor3.run(FORWARD);
   motor4.run(FORWARD);
+  delay(3000);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
 }
 
 void backBlock() {
