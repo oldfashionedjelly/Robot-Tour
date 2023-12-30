@@ -17,28 +17,29 @@ void loop() {
   buttonState = digitalRead(buttonPin); 
   //low = pressed (0)
   //high = not pressed (1)
-  motor1.setSpeed(speed(100));
-  motor2.setSpeed(speed(100));
-  motor3.setSpeed(speed(100));
-  motor4.setSpeed(speed(100));
   if (buttonState == LOW) {
     //start
     //go forward, turn, etc
+    //Set speed here to stop motors from going before button is pressed
+    motor1.setSpeed(255); //DO NOT SET SPEED LOWER THAN 110
+    motor2.setSpeed(255);
+    motor3.setSpeed(255);
+    motor4.setSpeed(255);
   }
 }
 
-int speed (int percent) {
-  return map(percent, 0, 100, 0, 255);
-}
+// int speed (int percent) {
+//   return map(percent, 0, 100, 0, 255);
+// }
 
-void leftBlock() {
+void rightBlock() {
   motor1.run(BACKWARD);
   motor2.run(FORWARD);
   motor3.run(BACKWARD);
   motor4.run(FORWARD);
 }
 
-void rightBlock() {
+void lefttBlock() {
   motor1.run(FORWARD);
   motor2.run(BACKWARD);
   motor3.run(FORWARD);
