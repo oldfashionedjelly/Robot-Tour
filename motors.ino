@@ -21,10 +21,11 @@ void loop() {
     //start
     //go forward, turn, etc
     //Set speed here to stop motors from going before button is pressed
-    motor1.setSpeed(255); //DO NOT SET SPEED LOWER THAN 110
-    motor2.setSpeed(255);
-    motor3.setSpeed(255);
-    motor4.setSpeed(255);
+    int speed = 255;
+    motor1.setSpeed(speed); //DO NOT SET SPEED LOWER THAN 110
+    motor2.setSpeed(speed);
+    motor3.setSpeed(speed);
+    motor4.setSpeed(speed);
     int period = 1500;
     forward(period);
     right(period);
