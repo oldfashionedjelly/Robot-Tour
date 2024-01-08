@@ -1,9 +1,9 @@
 #include <AFMotor.h>
 
 AF_DCMotor motor1(1); //blue FR
-AF_DCMotor motor2(2); //white FL
+AF_DCMotor motor2(2); //white FL **
 AF_DCMotor motor3(3); //black BL
-AF_DCMotor motor4(4); //red BR
+AF_DCMotor motor4(4); //red BR **
 
 const int buttonPin = 0;
 int buttonState = 0; //low
@@ -37,6 +37,30 @@ void loop() {
 // int speed (int percent) {
 //   return map(percent, 0, 100, 0, 255);
 // }
+
+void turnLeft() {
+  motor1.run(BACKWARD);
+  motor2.run(FORWARD);
+  motor3.run(FORWARD);
+  motor4.run(BACKWARD);
+  delay(630);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
+}
+
+void turnRight(){
+  motor1.run(FORWARD);
+  motor2.run(BACKWARD);
+  motor3.run(BACKWARD);
+  motor4.run(FORWARD);
+  delay(630);
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
+}
 
 void right(int period) {
   motor1.run(BACKWARD);

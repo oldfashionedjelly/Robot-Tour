@@ -1,4 +1,8 @@
-Forward/Backward:
-255: 55/56 cm
-110: 34/35/36 cm
+**In 1500 ms
 
+Forward/Backward:
+255: 55/56 cm (1350 ms)
+110: 34/35/36 cm (2143 ms)
+
+Turn:
+110: 630 ms
