@@ -1,8 +1,13 @@
-**In 1500 ms
-
-Forward/Backward:
+Forward/Backward (in 1500 ms):
 255: 55/56 cm (1350 ms)
+220:
+180:
+145:
 110: 34/35/36 cm (2143 ms)
 
-Turn:
-110: 630 ms
+Turn (90 deg):
+255: 375 ms
+220: 430 ms
+180: 490 ms
+145: 570 ma
+110: 630 ms 
